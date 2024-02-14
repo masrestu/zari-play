@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'Poppins';
+	src: local('Poppins Regular'), local('Poppins-Regular'),
+	     url('./poppins-regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+* {
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 5rem;
+	font-size: 5rem;
+}
+
+@keyframes wiggle {
+	0%, 100% {
+		transform: rotate(-3deg);
+	}
+	50% {
+		transform: rotate(3deg);
+	}
+}
+
+span.active {
+	animation: wiggle .7s ease-in-out infinite;
+}
+
+span:has(~ span.active), span.active ~ span {
+	opacity: .2;
+}
