@@ -6,10 +6,17 @@ for (let i = 0; i < 30; i++) {
 	}
 	const randomIndex = Math.floor(Math.random() * letters.length);
 	const span = document.createElement('span');
-	if (i == 3) {
+	if (i == 39) {
 		span.classList.add('active');
 	}
 	span.textContent = letters[randomIndex];
+
+	span.addEventListener('click', function () {
+		const active = document.querySelector('.active');
+		if (active) active.classList.remove('active');
+		this.classList.add('active');
+	});
+
 	document.body.appendChild(span);
 	letters.splice(randomIndex, 1);
 }
